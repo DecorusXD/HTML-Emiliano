@@ -1,0 +1,256 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#F3EFE7;
+}
+
+.contenedor{
+    width:100%;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+}
+
+/* ENCABEZADO */
+
+.encabezado{
+    height:220px;
+    background-image:url("hotel.jpg");
+    background-size:cover;
+    background-position:center;
+    position:relative;
+}
+
+/* BOTÓN MENÚ */
+
+.menu-btn{
+    position:absolute;
+    top:20px;
+    left:20px;
+
+    width:50px;
+    height:50px;
+
+    border:none;
+    border-radius:12px;
+
+    background:#D32F2F;
+    color:white;
+
+    font-size:28px;
+    cursor:pointer;
+}
+
+/* MENÚ LATERAL */
+
+.menu-lateral{
+
+    position:fixed;
+
+    left:-250px;
+    top:0;
+
+    width:220px;
+    height:100%;
+
+    background:#ffffff;
+
+    box-shadow:3px 0 10px rgba(0,0,0,.3);
+
+    transition:.3s;
+
+    padding-top:70px;
+
+    z-index:1000;
+
+}
+
+.menu-lateral.activo{
+
+    left:0;
+
+}
+
+.menu-lateral a{
+
+    display:block;
+
+    padding:18px;
+
+    text-decoration:none;
+
+    color:#333;
+
+    font-weight:bold;
+
+}
+
+.menu-lateral a:hover{
+
+    background:#ececec;
+
+}
+
+/* TITULO */
+
+.titulo{
+
+    position:absolute;
+
+    width:100%;
+
+    text-align:center;
+
+    top:95px;
+
+    color:#D32F2F;
+
+    font-size:55px;
+
+    text-shadow:2px 2px 5px black;
+
+}
+
+/* CONTENIDO */
+
+main{
+
+    width:90%;
+
+    margin:auto;
+
+    margin-top:40px;
+
+}
+
+/* GRUPOS */
+
+.grupo{
+
+    margin-bottom:30px;
+
+}
+
+.grupo label{
+
+    display:block;
+
+    margin-bottom:10px;
+
+    font-weight:bold;
+
+    color:#8B2C2C;
+
+}
+
+/* HABITACIONES */
+
+.habitaciones{
+
+    display:flex;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+}
+
+.habitaciones input{
+
+    display:none;
+
+}
+
+.habitaciones span{
+
+    width:45px;
+
+    height:45px;
+
+    border-radius:50%;
+
+    background:#B67D39;
+
+    color:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    cursor:pointer;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+.habitaciones input:checked + span{
+
+    background:#D32F2F;
+
+    transform:scale(1.15);
+
+}
+
+/* INPUTS */
+
+input[type="number"],
+input[type="date"]{
+
+    width:100%;
+
+    padding:12px;
+
+    border:1px solid #bbb;
+
+    border-radius:10px;
+
+    font-size:16px;
+
+}
+
+/* BOTONES */
+
+.botones{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-top:40px;
+
+}
+
+.btn-cafe{
+
+    background:#B67D39;
+
+    color:black;
+
+    border:none;
+
+    border-radius:18px;
+
+    padding:15px 35px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.btn-cafe:hover{
+
+    transform:scale(1.05);
+
+}

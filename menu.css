@@ -1,0 +1,120 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#F3EFE7;
+}
+
+.contenedor{
+    width:100%;
+    min-height:100vh;
+}
+
+/* ENCABEZADO */
+
+.encabezado{
+    height:250px;
+    background-image:url("hotel.jpg");
+    background-size:cover;
+    background-position:center;
+    position:relative;
+}
+
+/* TITULO */
+
+.titulo{
+    position:absolute;
+    width:100%;
+    text-align:center;
+    top:105px;
+
+    color:#D32F2F;
+    font-size:50px;
+
+    text-shadow:2px 2px 5px black;
+}
+
+/* BOTONES */
+
+.btn-rojo{
+    background:#D32F2F;
+    color:white;
+
+    border:none;
+    border-radius:20px;
+
+    padding:12px 28px;
+
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.btn-cafe{
+    background:#B67D39;
+    color:black;
+
+    border:none;
+    border-radius:20px;
+
+    padding:18px 40px;
+
+    cursor:pointer;
+    font-size:18px;
+    font-weight:bold;
+}
+
+/* SALIR */
+
+.encabezado .btn-rojo{
+    position:absolute;
+    top:20px;
+    left:20px;
+}
+
+/* AYUDA */
+
+.ayuda{
+    position:absolute;
+    top:20px;
+    right:20px;
+}
+
+/* VISTA */
+
+.vista{
+    margin:20px;
+}
+
+/* MENU */
+
+.menu{
+    margin-top:60px;
+
+    display:flex;
+    justify-content:space-evenly;
+    align-items:center;
+}
+
+/* FOOTER */
+
+footer{
+
+    width:100%;
+
+    margin-top:auto;
+    padding:20px 0;
+
+    text-align:center;
+
+    font-size:12px;
+    color:#555;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
