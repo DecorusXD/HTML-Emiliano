@@ -1,0 +1,109 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+
+    background:#F3EFE7;
+
+}
+
+.contenedor{
+
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.encabezado{
+
+    height:220px;
+
+    background-image:url("hotel.jpg");
+
+    background-size:cover;
+
+    background-position:center;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.titulo{
+
+    font-size:55px;
+
+    color:#D32F2F;
+
+    text-shadow:2px 2px 5px black;
+
+    text-align:center;
+
+}
+
+main{
+
+    flex:1;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.mensaje{
+
+    font-size:30px;
+
+    margin-bottom:45px;
+
+    color:#444;
+
+    text-align:center;
+
+    font-weight:bold;
+
+}
+
+.btn-cafe{
+
+    background:#B67D39;
+
+    color:black;
+
+    border:none;
+
+    border-radius:18px;
+
+    padding:18px 40px;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.btn-cafe:hover{
+
+    transform:scale(1.05);
+
+}
+

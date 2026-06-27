@@ -1,0 +1,240 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#F3EFE7;
+}
+
+.contenedor{
+    width:100%;
+    min-height:100vh;
+}
+
+/*========== ENCABEZADO ==========*/
+
+.encabezado{
+    height:220px;
+    background:url("hotel.jpg") center/cover;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:25px;
+    position:relative;
+}
+
+.titulo{
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    color:#D32F2F;
+    font-size:55px;
+    text-shadow:2px 2px 3px white;
+}
+
+/*========== BOTONES ==========*/
+
+.btn-cafe{
+
+    background:#B67D39;
+    color:white;
+
+    border:none;
+
+    border-radius:18px;
+
+    width:145px;
+    height:55px;
+
+    cursor:pointer;
+
+    font-weight:bold;
+
+    transition:.3s;
+}
+
+.btn-cafe:hover{
+
+    transform:scale(1.05);
+
+}
+
+/*========== HAMBURGUESA ==========*/
+
+.menu-icono{
+
+    font-size:40px;
+
+    color:#ff9800;
+
+    cursor:pointer;
+
+    user-select:none;
+
+}
+
+/*========== MENÚ ==========*/
+
+.menu-lateral{
+
+    position:fixed;
+
+    left:-220px;
+
+    top:0;
+
+    width:220px;
+
+    height:100%;
+
+    background:#B67D39;
+
+    transition:.4s;
+
+    padding-top:80px;
+
+    z-index:1000;
+
+}
+
+.menu-lateral a{
+
+    display:block;
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:18px;
+
+    font-size:20px;
+
+}
+
+.menu-lateral a:hover{
+
+    background:#8a5a20;
+
+}
+
+/*========== CONTENIDO ==========*/
+
+.contenido{
+
+    width:85%;
+
+    margin:40px auto;
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+label{
+
+    color:#8C2F1E;
+
+    font-weight:bold;
+
+    margin-top:20px;
+
+    margin-bottom:10px;
+
+}
+
+input{
+
+    height:45px;
+
+    border:none;
+
+    background:#dddddd;
+
+    padding-left:15px;
+
+    font-size:17px;
+
+}
+
+textarea{
+
+    resize:none;
+
+    border:none;
+
+    background:#dddddd;
+
+    padding:15px;
+
+    font-size:17px;
+
+}
+
+/*========== BOTÓN ENVIAR ==========*/
+
+.btn-enviar{
+
+    margin:35px auto;
+
+    width:170px;
+
+    height:55px;
+
+    border:none;
+
+    border-radius:25px;
+
+    background:#B67D39;
+
+    color:white;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+}
+
+.btn-enviar:hover{
+
+    transform:scale(1.05);
+
+}
+
+/*========== DALTONISMO ==========*/
+
+body.modoDaltonismo{
+
+    background:white;
+
+}
+
+body.modoDaltonismo .titulo{
+
+    color:#003C8F;
+
+}
+
+body.modoDaltonismo .btn-cafe,
+body.modoDaltonismo .btn-enviar{
+
+    background:#005A9C;
+
+}
+
+body.modoDaltonismo .menu-lateral{
+
+    background:#005A9C;
+
+}
+
+body.modoDaltonismo label{
+
+    color:#003C8F;
+
+}

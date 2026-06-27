@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reportes</title>
+
+    <link rel="stylesheet" href="reporte.css">
+</head>
+
+<body>
+
+<div class="contenedor">
+
+    <!-- ENCABEZADO -->
+
+    <header class="encabezado">
+
+        <div class="menu-icono" onclick="abrirMenu()">
+            ☰
+        </div>
+
+        <h1 class="titulo">REPORTES</h1>
+
+        <button class="btn-cafe"
+        onclick="location.href='ver_reportes.html'">
+            VER REPORTES
+        </button>
+
+    </header>
+
+
+    <!-- MENÚ DESPLEGABLE -->
+
+    <div id="menuLateral" class="menu-lateral">
+
+        <a href="menu.html">Salir</a>
+
+    </div>
+
+
+    <!-- FORMULARIO -->
+
+    <main class="contenido">
+
+        <label>HABITACIÓN:</label>
+
+        <input
+        type="text"
+        placeholder="Número de habitación">
+
+
+        <label>DESCRIPCIÓN:</label>
+
+        <textarea
+        rows="6"
+        placeholder="Escriba aquí el reporte..."></textarea>
+
+
+        <button class="btn-enviar"
+        onclick="location.href='reporteexitoso.html'">
+
+            ENVIAR
+
+        </button>
+
+    </main>
+
+</div>
+
+<script src="vista.js"></script>
+<script src="reportes.js"></script>
+
+</body>
+</html>
