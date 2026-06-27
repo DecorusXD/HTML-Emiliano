@@ -1,0 +1,85 @@
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#f0f0f0;
+}
+
+/* Imagen superior */
+.banner{
+    height:220px;
+    background-image:url("hotel.jpg");
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.banner h1{
+    color:#d62828;
+    font-size:55px;
+    text-shadow:3px 3px 5px black;
+}
+
+/* Fondo crema */
+.contenido{
+    background:#f4eee2;
+    padding:50px;
+}
+
+h2{
+    text-align:center;
+    color:#a46d1a;
+    margin-bottom:50px;
+    font-size:35px;
+}
+
+/* Información */
+.info{
+    width:80%;
+    margin:auto;
+}
+
+.fila{
+    display:flex;
+    align-items:center;
+    margin-bottom:40px;
+}
+
+.numero{
+    width:60px;
+    height:60px;
+    background:white;
+    border:2px solid lightgray;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:40px;
+    font-weight:bold;
+    margin-right:25px;
+}
+
+.fila p{
+    color:#a46d1a;
+    font-size:25px;
+}
+
+/* Botones */
+.botones{
+    text-align:center;
+    margin-top:50px;
+}
+
+button{
+    background:linear-gradient(to right, #b30000, #ff4d4d);
+    color:white;
+    border:none;
+    padding:18px 35px;
+    margin:15px;
+    border-radius:20px;
+    font-weight:bold;
+    cursor:pointer;
+}
