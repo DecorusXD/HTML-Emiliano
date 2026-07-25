@@ -9,18 +9,16 @@ if (!isset($_SESSION['usuario_id'])) {
 include("config/conexion.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $habitacion = $_POST['habitacion'];
-    $llave = trim($_POST['llave_entregada']);
-    $fecha = $_POST['fecha_desalojo'];
+    $habitacion = intval($_POST['habitacion']);
+    $nombre = trim($_POST['nombre']);
+    $noches = intval($_POST['noches']);
 
-    if (!empty($habitacion) && !empty($llave) && !empty($fecha)) {
-        $stmt = $conexion->prepare("INSERT INTO entregas (habitacion, llave_entregada, fecha_desalojo) VALUES (?, ?, ?)");
-        $stmt->bind_param("iss", $habitacion, $llave, $fecha);
-        
+    if (!empty($habitacion) && !empty($nombre) && !empty($noches)) {
+        $stmt = $conexion->prepare("INSERT INTO registros_huesped (habitacion, nombre_huesped, noches) VALUES (?, ?, ?)");
+        $stmt->bind_param("isi", $habitacion, $nombre, $noches);
         if ($stmt->execute()) {
             $stmt->close();
-            
-            header("Location: ver_entregas.php");
+            header("Location: menu.php");
             exit();
         }
     }
@@ -31,28 +29,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Entrega de Habitación</title>
+    <title>Registro de Huésped</title>
     <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
 
     <button id="btn-daltonismo" class="btn-daltonismo-flotante"> Modo Daltonismo</button>
-
     <a href="menu.php" class="menu-hamburguesa">☰</a>
 
     <div class="header-img-container" style="margin-top: 40px;">
         <img src="img/lobby.jpg" alt="Lobby del Hotel">
-        <div class="title-overlay">ENTREGA</div>
+        <div class="title-overlay">REGISTRO</div>
     </div>
 
     <div class="content">
-        
-        <div style="display: flex; justify-content: flex-end; margin-bottom: 15px;">
-            <a href="limpieza.php" class="btn btn-cafe" style="width: auto; padding: 10px 25px;">LIMPIEZA</a>
-        </div>
-
-        <form action="entrega.php" method="POST">
-        
+        <form action="registro_huesped.php" method="POST">
             <label style="font-weight: bold; font-size: 1.1rem; color: var(--text-color);">HABITACION:</label>
             <div class="habitaciones-selector">
                 <?php for($i = 1; $i <= 7; $i++): ?>
@@ -62,17 +53,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
 
             <div class="form-group">
-                <label for="llave_entregada">LLAVE ENTREGADA:</label>
-                <input type="text" id="llave_entregada" name="llave_entregada" class="input-gradient" required>
+                <label for="nombre">NOMBRE DEL HUESPED:</label>
+                <input type="text" id="nombre" name="nombre" class="input-gradient" required>
             </div>
 
             <div class="form-group">
-                <label for="fecha_desalojo">FECHA DE DESALOJO:</label>
-                <input type="date" id="fecha_desalojo" name="fecha_desalojo" class="input-gradient" required>
+                <label for="noches">NOCHES DE ESTANCIA:</label>
+                <input type="number" id="noches" name="noches" min="1" class="input-gradient" required>
             </div>
 
             <div style="display: flex; justify-content: flex-end; margin-top: 25px;">
-                <button type="submit" class="btn btn-cafe" style="width: 180px;">MARCAR</button>
+                <button type="submit" class="btn btn-cafe" style="width: 180px;">REGISTRAR</button>
             </div>
         </form>
     </div>
@@ -80,4 +71,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <script src="js/script.js"></script>
 </body>
 </html>
-

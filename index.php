@@ -3,50 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HotelWeb</title>
-
-    <link rel="stylesheet" href="index.css">
+    <title>Bienvenido - Hotel</title>
+    <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
-    <header>
-        <img src="hotel.jpg" alt="Hotel" class="banner">
-    </header>
-    <main>
-        <h1>¡BIENVENIDO!</h1>
-        <h2>¿POR QUÉ ELEGIRNOS PARA TU EXPERIENCIA?</h2>
-        <div class="ventajas">
-            <div class="caja">
-                <h3>01</h3>
-                <p>
-                    Aquí irá la primera ventaja de tu hotel.
-                </p>
-            </div>
-            <div class="caja">
-                <h3>02</h3>
-                <p>
-                    Aquí irá la segunda ventaja de tu hotel.
-                </p>
-            </div>
-            <div class="caja">
-                <h3>03</h3>
-                <p>
-                    Aquí irá la tercera ventaja de tu hotel.
-                </p>
-            </div>
-        </div>
-        <div class="botones">
-            <a href="registro.php">
-                <button class="registro">
-                    ¿TE ANIMAS?
-                </button>
-            </a>
 
-            <a href="login.php">
-                <button class="login">
-                    ¿YA ERES CLIENTE?
-                </button>
-            </a>
+    <button id="btn-daltonismo" class="btn-daltonismo-flotante"> Modo Daltonismo</button>
+
+    <div class="header-img-container">
+        <img src="img/lobby.jpg" alt="Lobby del Hotel">
+        <div class="title-overlay">¡BIENVENIDO!</div>
+    </div>
+
+    <div class="content">
+        <h2 class="subtitle">¿PORQUE ELEGIRNOS PARA TU EXPERIENCIA?</h2>
+        
+        <ul class="lista-razones">
+            <li>
+                <span class="numero-3d">1</span> 
+                Contamos con una ubicacion privilegiada y bien acomodada para una buena experiencia.
+            </li>
+            <li>
+                <span class="numero-3d">2</span> 
+                Nos comprometimos con el medio ambiente para un espacio limpio y amigable.
+            </li>
+            <li>
+                <span class="numero-3d">3</span> 
+                Atencion rapida, atenta y correcta para tu comodidad.
+            </li>
+        </ul>
+
+        <div class="botones-inferiores">
+            <a href="registro.php" class="btn btn-rojo">¿TE ANIMAS?</a>
+            <a href="login.php" class="btn btn-rojo">¿YA ERES CLIENTE?</a>
         </div>
-    </main>
+    </div>
+
+    <script src="js/script.js"></script>
 </body>
 </html>

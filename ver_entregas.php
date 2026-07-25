@@ -8,35 +8,24 @@ if (!isset($_SESSION['usuario_id'])) {
 
 include("config/conexion.php");
 
-// Eliminar un reporte por ID
-if (isset($_GET['eliminar'])) {
-    $id = intval($_GET['eliminar']);
-    $stmt = $conexion->prepare("DELETE FROM reportes WHERE id = ?");
-    $stmt->bind_param("i", $id);
-    $stmt->execute();
-    $stmt->close();
-    header("Location: ver_reportes.php");
-    exit();
-}
-
-$resultado = $conexion->query("SELECT * FROM reportes ORDER BY id DESC");
+$resultado = $conexion->query("SELECT * FROM entregas ORDER BY id DESC");
 ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Reportes</title>
+    <title>Reportes de Entrega</title>
     <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
 
-    <button id="btn-daltonismo" class="btn-daltonismo-flotante"> Modo Daltonismo</button>
-    <a href="reportes.php" class="btn btn-rojo btn-salir">VOLVER</a>
+    <button id="btn-daltonismo" class="btn-daltonismo-flotante">👁️ Modo Daltonismo</button>
+    <a href="entrega.php" class="btn btn-rojo btn-salir">VOLVER</a>
 
     <div class="header-img-container" style="margin-top: 50px;">
         <img src="img/lobby.jpg" alt="Lobby del Hotel">
-        <div class="title-overlay" style="font-size: 2.2rem;">LISTA DE REPORTES</div>
+        <div class="title-overlay" style="font-size: 2.2rem;">REPORTES DE ENTREGA</div>
     </div>
 
     <div class="content">
@@ -44,8 +33,9 @@ $resultado = $conexion->query("SELECT * FROM reportes ORDER BY id DESC");
             <thead>
                 <tr>
                     <th>Habitación</th>
-                    <th>Descripción</th>
-                    <th>Acción</th>
+                    <th>Llave Entregada</th>
+                    <th>Fecha de Desalojo</th>
+                    <th>Fecha de Registro</th>
                 </tr>
             </thead>
             <tbody>
@@ -53,17 +43,14 @@ $resultado = $conexion->query("SELECT * FROM reportes ORDER BY id DESC");
                     <?php while($row = $resultado->fetch_assoc()): ?>
                     <tr>
                         <td>Habitación <?php echo htmlspecialchars($row['habitacion']); ?></td>
-                        <td><?php echo htmlspecialchars($row['descripcion']); ?></td>
-                        <td>
-                            <a href="ver_reportes.php?eliminar=<?php echo $row['id']; ?>" class="btn-eliminar" onclick="return confirm('¿Deseas eliminar este reporte?');">
-                                Eliminar
-                            </a>
-                        </td>
+                        <td><?php echo htmlspecialchars($row['llave_entregada']); ?></td>
+                        <td><?php echo htmlspecialchars($row['fecha_desalojo']); ?></td>
+                        <td><?php echo htmlspecialchars($row['fecha_registro']); ?></td>
                     </tr>
                     <?php endwhile; ?>
                 <?php else: ?>
                     <tr>
-                        <td colspan="3" style="text-align: center;">No hay reportes registrados.</td>
+                        <td colspan="4" style="text-align: center;">No hay registros de entrega aún.</td>
                     </tr>
                 <?php endif; ?>
             </tbody>
