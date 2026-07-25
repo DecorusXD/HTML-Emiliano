@@ -1,0 +1,254 @@
+:root {
+    --bg-color: #faefe4;
+    --text-color: #8f3b25;
+    --btn-rojo-top: #ee2c2c;
+    --btn-rojo-bot: #a00606;
+    --btn-cafe-top: #c5915d;
+    --btn-cafe-bot: #8b5b29;
+    --title-stroke: #8b0000;
+}
+
+[data-theme="daltonismo"] {
+    --bg-color: #f0f4f8;
+    --text-color: #102a43;
+    --btn-rojo-top: #2b6cb0;
+    --btn-rojo-bot: #1a365d;
+    --btn-cafe-top: #ecc94b;
+    --btn-cafe-bot: #b7791f;
+    --title-stroke: #1a365d;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.btn-daltonismo-flotante {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    background: #333;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.header-img-container {
+    width: 100%;
+    max-width: 800px;
+    position: relative;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.header-img-container.punteado {
+    border: 2px dashed #555;
+    padding: 4px;
+}
+
+.header-img-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    opacity: 0.85;
+}
+
+.title-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3.2rem;
+    font-weight: bold;
+    color: #ffb6b9;
+    text-shadow: 2px 2px 0 var(--title-stroke), -2px -2px 0 var(--title-stroke), 2px -2px 0 var(--title-stroke), -2px 2px 0 var(--title-stroke);
+    letter-spacing: 2px;
+}
+
+.content {
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+}
+
+h2.subtitle {
+    text-align: center;
+    font-size: 1.4rem;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.lista-razones {
+    list-style: none;
+    margin-bottom: 40px;
+}
+
+.lista-razones li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+}
+
+.numero-3d {
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 3px 3px 0 #000, 4px 4px 0 #000, 5px 5px 0 #000;
+    margin-right: 20px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.input-gradient {
+    width: 100%;
+    height: 45px;
+    border: none;
+    background: linear-gradient(to right, #a9a9a9, #ffffff);
+    padding: 10px;
+    font-size: 1rem;
+    color: #000;
+    border-radius: 4px;
+}
+
+.btn {
+    padding: 14px 28px;
+    border: none;
+    border-radius: 25px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.btn-rojo {
+    background: linear-gradient(to bottom, var(--btn-rojo-top), var(--btn-rojo-bot));
+}
+
+.btn-cafe {
+    background: linear-gradient(to bottom, var(--btn-cafe-top), var(--btn-cafe-bot));
+    width: 200px;
+    margin: 0 auto;
+    display: block;
+}
+
+.btn-salir {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    border: 2px dashed #000;
+    border-radius: 30px;
+    padding: 10px 20px;
+}
+
+.botones-inferiores {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+.menu-hamburguesa {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 2rem;
+    color: #e67e22;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.habitaciones-selector {
+    display: flex;
+    gap: 12px;
+    margin: 15px 0 25px 0;
+    flex-wrap: wrap;
+}
+
+.habitaciones-selector input[type="radio"] {
+    display: none;
+}
+
+.habitaciones-selector label {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: linear-gradient(to bottom, var(--btn-cafe-top), var(--btn-cafe-bot));
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+    transition: transform 0.2s, border 0.2s;
+}
+
+.habitaciones-selector input[type="radio"]:checked + label {
+    border: 3px solid #000;
+    transform: scale(1.15);
+}
+
+/* Estilos de tabla para listados */
+.tabla-reportes {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.tabla-reportes th, .tabla-reportes td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.tabla-reportes th {
+    background-color: var(--text-color);
+    color: white;
+}
+
+.btn-eliminar {
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-superior-derecho {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
